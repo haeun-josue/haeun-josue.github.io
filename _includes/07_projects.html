@@ -1,0 +1,58 @@
+<section id="projects">
+    <h2>Projects</h2>
+    <ul>
+        <li>
+            <span class="item-title">Agentic Backend Optimization System for FPGA</span>
+            <span class="item-desc">Developed an LLM-driven agentic system that analyzes FPGA design checkpoints (DCPs) to select and execute optimization strategies.</span>
+        </li>
+        <li>
+            <span class="item-title">Synchronized Multi-Camera System</span>
+            <span class="item-desc">Developed a synchronized multi-camera system for human-robot interaction data collection. Used PTP for clock synchronization and external trigger pins to synchronize image capture.</span>
+        </li>
+        <li>
+            <span class="item-title">MPW (TinyTapeout 180nm, Fabrication in Progress): Robotic Reflex Chip for the PiPer Robotic Arm</span>
+            <span class="item-desc">Developed the chip using an FPGA-based hardware-in-the-loop simulation (HILS) setup integrated with Gazebo, and submitted the ASIC design for fabrication through TinyTapeout.</span>
+        </li>
+        <li>
+            <div class="hover-container">
+                <span class="item-title chip-trigger">MPW (ETRI 500nm, Silicon Proven): 12-bit CORDIC-based NCO (Numerically Controlled Oscillator)</span>
+                <div class="chip-tooltip">
+                    <div class="chip-top-wide">
+                        <img src="images/nco_wide.jpg" alt="NCO Full Layout">
+                        <span class="caption">12-bit CORDIC-based NCO System PCB</span>
+                    </div>
+                    <div class="chip-grid">
+                        <div><img src="images/layout1.png" alt="Layout 1"><span class="caption">Sub1: Phase Accumulator</span></div>
+                        <div><img src="images/layout2.png" alt="Layout 2"><span class="caption">Sub2: CORDIC Element</span></div>
+                        <div><img src="images/layout3.png" alt="Layout 3"><span class="caption">Sub3: Output Terminal</span></div>
+                    </div>
+                </div>
+            </div>
+            <span class="item-desc">Designed and verified an NCO using the CORDIC algorithm to generate sinusoidal waveforms, optimized under I/O pad and area limitations. Open-Source EDA-based design, taped out via the My Chip Service (2025 1st Shuttle).</span>
+        </li>
+        <li>
+            <div class="hover-container">
+                <span class="item-title chip-trigger">MPW (ETRI 500nm, Fabricated): 8-bit FIR Filter Processing Element</span>
+                <div class="chip-tooltip single-chip">
+                    <img src="images/fir_layout.png" alt="FIR Layout">
+                    <span class="caption">FIR Processing Element</span>
+                </div>
+            </div>
+            <span class="item-desc">Developed a Processing Element (PE) for Finite Impulse Response (FIR) filtering applications, optimized under I/O pad and area limitations. Open-Source EDA-based design, taped out via the My Chip Service (2024 2nd Shuttle).</span>
+        </li>
+        <li>
+            <div class="hover-container">
+                <span class="item-title chip-trigger">MPW (ETRI 500nm, Fabricated): 4-bit Booth's Algorithm Multiplier</span>
+                <div class="chip-tooltip single-chip">
+                    <img src="images/booth_layout.png" alt="Booth Layout">
+                    <span class="caption">Booth's Multiplier</span>
+                </div>
+            </div>
+            <span class="item-desc">Implemented a hardware multiplier based on Booth's encoding to reduce the number of partial products. The first chip to use a custom ETRI 500nm standard cell library. Open-Source EDA-based design, taped out via the My Chip Service (2023 1st Shuttle).</span>
+        </li>
+        <li>
+            <span class="item-title">Embedded System: Alcohol Sensing-Based Ignition Interlock System</span>
+            <span class="item-desc">Developed an alcohol-based ignition locking mechanism that prevents vehicle startup by physical keyhole restriction.</span>
+        </li>
+    </ul>
+</section>
