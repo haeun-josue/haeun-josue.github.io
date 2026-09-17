@@ -22,6 +22,7 @@ body {
     padding: 40px 20px;
 }
 
+/* --- 헤더 --- */
 header {
     text-align: center;
     margin-bottom: 45px;
@@ -29,40 +30,42 @@ header {
 
 header h1 {
     font-size: 2.5rem;
-    padding: 0 50px 1px 50px; 
+    padding: 0 50px 1px 50px;
     display: inline-block;
     letter-spacing: -1px;
     margin: 0;
-    color: var(--accent-blue); 
-    border-bottom: 3px solid; 
+    color: var(--accent-blue);
+    border-bottom: 3px solid;
     border-image: linear-gradient(
-        to right, 
-        rgba(9, 72, 134, 0) 0%, 
-        var(--accent-blue) 20%, 
-        var(--accent-blue) 80%, 
+        to right,
+        rgba(9, 72, 134, 0) 0%,
+        var(--accent-blue) 20%,
+        var(--accent-blue) 80%,
         rgba(9, 72, 134, 0) 100%
     ) 1;
 }
 
+/* --- 섹션 제목 --- */
 section { margin-bottom: 45px; }
 
 h2 {
-    font-size: 1.15rem; 
-    display: block; 
-    color: #ffffff; 
-    padding: 3px 10px; 
-    background: linear-gradient(to right, 
-        var(--accent-blue) 0%, 
-        var(--accent-blue) 5%, 
+    font-size: 1.15rem;
+    display: block;
+    color: #ffffff;
+    padding: 3px 10px;
+    background: linear-gradient(to right,
+        var(--accent-blue) 0%,
+        var(--accent-blue) 5%,
         rgba(9, 72, 134, 0) 120%
-    ); 
-    border-left: 8px solid var(--accent-blue); 
-    margin-bottom: 20px; 
-    border-radius: 4px 4px 4px 4px;
-    width: 100%; 
+    );
+    border-left: 8px solid var(--accent-blue);
+    margin-bottom: 20px;
+    border-radius: 4px;
+    width: 100%;
     box-sizing: border-box;
 }
 
+/* --- About --- */
 .about-content {
     display: flex;
     align-items: center;
@@ -79,12 +82,15 @@ h2 {
 
 .about-text { flex: 1; min-width: 250px; }
 
+/* --- 목록 --- */
 ul { list-style: none; padding: 0; }
+
 li {
     margin-bottom: 15px;
     position: relative;
     padding-left: 18px;
 }
+
 li::before {
     content: "•";
     color: var(--accent-blue);
@@ -94,9 +100,9 @@ li::before {
 }
 
 .item-title { font-weight: bold; display: block; }
-.item-desc { font-size: 0.85rem; color: #666; display: block; }
+.item-desc  { font-size: 0.85rem; color: #666; display: block; }
 
-/* --- 이미지 호버 레이아웃 --- */
+/* --- 이미지 호버 툴팁 --- */
 .hover-container {
     position: relative;
     display: inline-block;
@@ -108,7 +114,6 @@ li::before {
     border-bottom: 1px dashed var(--accent-blue);
     transition: 0.2s;
 }
-
 .chip-trigger:hover { background-color: #f0f4f8; }
 
 .chip-tooltip {
@@ -125,39 +130,8 @@ li::before {
     padding: 15px;
     z-index: 100;
     transition: all 0.3s ease;
-    width: 500px; 
+    width: 500px;
 }
-
-.chip-top-wide {
-    width: 100%;
-    margin-bottom: 12px;
-}
-.chip-top-wide img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    border: 1px solid #eee;
-}
-
-.chip-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-}
-
-.chip-grid div { text-align: center; }
-.chip-grid img { 
-    width: 100%; 
-    aspect-ratio: 1 / 1; 
-    object-fit: cover; 
-    border-radius: 4px; 
-    border: 1px solid #eee; 
-}
-
-.caption { font-size: 10px; color: #888; margin-top: 5px; display: block; text-align: center; }
-
-.single-chip { width: 250px; }
-.single-chip img { width: 100%; border-radius: 4px; }
 
 .hover-container:hover .chip-tooltip {
     visibility: visible;
@@ -165,9 +139,47 @@ li::before {
     transform: translateX(-50%) translateY(0);
 }
 
+/* NCO: 상단 와이드 이미지 */
+.chip-top-wide { width: 100%; margin-bottom: 12px; }
+.chip-top-wide img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+/* 하단 3개 그리드 */
+.chip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+.chip-grid div { text-align: center; }
+.chip-grid img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+.caption {
+    font-size: 10px;
+    color: #888;
+    margin-top: 5px;
+    display: block;
+    text-align: center;
+}
+
+/* 단일 이미지 툴팁 */
+.single-chip { width: 250px; }
+.single-chip img { width: 100%; border-radius: 4px; }
+
+/* --- Contact --- */
 .contact-link { color: var(--accent-blue); text-decoration: none; font-weight: bold; }
 .contact-link:hover { text-decoration: underline; }
 
+/* --- 모바일 --- */
 @media (max-width: 600px) {
     header h1 { font-size: 1.8rem; }
     .about-content { text-align: center; justify-content: center; }
