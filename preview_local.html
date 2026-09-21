@@ -1,3 +1,4 @@
+<!-- 자동 생성 파일. 직접 고치지 말고 ./build_preview.sh 를 실행하세요. -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,129 +7,304 @@
     <title>Personal Page | Haeun Ji</title>
     <!-- 분리한 CSS 파일 로드 -->
     <link rel="stylesheet" href="00_style.css">
+    <!-- JS가 꺼져 있으면 모든 섹션이 그냥 펼쳐지도록 -->
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 <div class="container">
-<header>
+    <header>
     <h1>Haeun Ji</h1>
 </header>
-<section id="about">
+    <section id="about">
     <h2>About Me</h2>
     <div class="about-content">
         <img src="images/image.jpg" alt="Profile" class="profile-img">
         <div class="about-text">
             <ul>
-                <li>I am an <strong>FPGA/ASIC Engineer</strong> at <strong>Automated Engineering and Research (AER)</strong>.</li>
-                <li>My academic background is in <strong>Electronic Engineering</strong>, with a primary focus on <strong>Chip Design using Open-Source EDA</strong>.</li>
-                <li>My research interests lie in <strong>Hardware for Autonomous Robotics</strong>.</li>
+                <li>Welcome to my page!</li>
+                <li>I am an <strong>Open-Source Chip Maker</strong>.</li>
+                <li>My academic background is in <strong>Electronic Engineering</strong>.</li>
+                <li>My interests lie in <strong>SoC for Physical Intelligence</strong> and <strong>Design Automation</strong>.</li>
             </ul>
         </div>
     </div>
 </section>
-<section id="education">
+
+    <!-- 탭 버튼은 아래 섹션들의 <h2> 에서 자동 생성됩니다 (01_script.js) -->
+    <nav class="tabs" data-tabs="main" data-tabs-hash></nav>
+
+    <section id="news" class="tab-panel" data-tabgroup="main">
+    <h2>News</h2>
+    <!-- 새 소식은 맨 위에 <li> 를 하나 더 추가하면 됩니다. -->
+    <ul class="news-list">
+        <li>
+            <span class="news-date">2026.09</span>
+            <span class="news-text">Won <strong>1st Place (sponsored by AMD)</strong> at the Agentic FPGA Backend Optimization Competition, <strong>FPL&rsquo;26</strong> in Ghent, Belgium.</span>
+        </li>
+        <li>
+            <span class="news-date">2026.06</span>
+            <span class="news-text">Joined <strong>AER (Automated Engineering &amp; Research)</strong> as an FPGA/ASIC Engineer.</span>
+        </li>
+        <li>
+            <span class="news-date">2025.12</span>
+            <span class="news-text">Started as a Research Intern at the <strong>SNU ARI Lab (Autonomous Robot Intelligence Lab)</strong>.</span>
+        </li>
+        <li>
+            <span class="news-date">2025.11</span>
+            <span class="news-text">Received the <strong>Grand Prize</strong> (Minister of Science and ICT) at the My Chip Design Competition at IEIE&rsquo;25 for the 12-bit CORDIC-based NCO.</span>
+        </li>
+    </ul>
+</section>
+    <section id="experience" class="tab-panel" data-tabgroup="main">
     <h2>Experience &amp; Education</h2>
-    <ul>
-        <li>
-            <span class="item-title">Automated Engineering and Research (AER), Seoul, Korea</span>
-            <span class="item-desc">FPGA/ASIC Engineer (2026.06 - current)</span>
-        </li>
-        <li>
-            <span class="item-title">Seoul National University, Seoul, Korea</span>
-            <span class="item-desc">Research Intern at the ARIL (2025.12 - 2026.06)</span>
-        </li>
-        <li>
-            <span class="item-title">Kyung Hee University, Yongin, Korea</span>
-            <span class="item-desc">B.S. in Electronic Engineering (2019.03 - 2025.02)</span>
-        </li>
-        <li>
-            <span class="item-title">Guard Post (GP), Republic of Korea Army</span>
-            <span class="item-desc">Served as a Reconnaissance and Signaller (2020.10 - 2022.01)</span>
-        </li>
-    </ul>
+
+    <!-- 하위 탭 (Main / Extracurricular). 버튼은 아래 패널의 data-tab-label 에서 자동 생성 -->
+    <nav class="tabs tabs-sub" data-tabs="expedu"></nav>
+
+    <div id="exp-main" class="tab-panel" data-tabgroup="expedu" data-tab-label="Main">
+        <ul>
+            <li>
+                <div class="item-body">
+                    <div class="item-head">
+                        <span class="item-title">Affordance <span class="item-kind">Human-Robot Interaction Startup</span></span>
+                        <span class="item-meta">Seoul, South Korea</span>
+                    </div>
+                    <div class="item-head">
+                        <span class="item-desc">Synchronized Multi-Camera Systems Engineer &amp; AI Automation for Semiconductor Design</span>
+                        <span class="item-meta">Sep. 2026 &ndash; Present</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-body">
+                    <div class="item-head">
+                        <span class="item-title">AER (Automated Engineering &amp; Research) <span class="item-kind">Robotics Semiconductor &amp; AI Automation Startup</span></span>
+                        <span class="item-meta">Seoul, South Korea</span>
+                    </div>
+                    <div class="item-head">
+                        <span class="item-desc">FPGA/ASIC Engineer</span>
+                        <span class="item-meta">Jun. 2026 &ndash; Aug. 2026</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-body">
+                    <div class="item-head">
+                        <span class="item-title">SNU ARI Lab (Autonomous Robot Intelligence Lab)</span>
+                        <span class="item-meta">Seoul, South Korea</span>
+                    </div>
+                    <div class="item-head">
+                        <span class="item-desc">Research Intern</span>
+                        <span class="item-meta">Dec. 2025 &ndash; Jun. 2026</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-body">
+                    <div class="item-head">
+                        <span class="item-title">Kyung Hee University</span>
+                        <span class="item-meta">Yongin, Korea</span>
+                    </div>
+                    <div class="item-head">
+                        <span class="item-desc">Bachelor of Electronic Engineering</span>
+                        <span class="item-meta">Mar. 2019 &ndash; Feb. 2025</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-body">
+                    <div class="item-head">
+                        <span class="item-title">Republic of Korea Army (ROK Army)</span>
+                        <span class="item-meta">Central Frontline DMZ, South Korea</span>
+                    </div>
+                    <div class="item-head">
+                        <span class="item-desc">Frontline Guard Post Military Police (Sergeant, Honorably Discharged)</span>
+                        <span class="item-meta">Jul. 2020 &ndash; Jan. 2022</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div id="exp-extra" class="tab-panel" data-tabgroup="expedu" data-tab-label="Extracurricular Exp.">
+        <ul>
+            <li>
+                <!-- 사진 추가: 아래 <span> 안에 이 줄을 붙여넣으세요. 여러 장 넣으면 사진첩이 됩니다.
+                     <img class="thumb" loading="lazy" src="images/파일명.jpg" alt="짧은 설명" data-caption="확대했을 때 뜰 설명"> -->
+                <span class="thumbs"></span>
+                <div class="item-body">
+                    <div class="item-head">
+                        <span class="item-title">Panelist: 2024 Presidential Town Hall Meeting</span>
+                        <span class="item-meta">2024</span>
+                    </div>
+                    <span class="item-desc">Selected as a student representative to provide feedback on the &ldquo;My Chip Service&rdquo;.</span>
+                </div>
+            </li>
+        </ul>
+    </div>
 </section>
-<section id="interests">
-    <h2>Research Interests</h2>
-    <ul>
-        <li>Hardware for Autonomous Robotics</li>
-        <li>Chip Design using Open-Source EDA</li>
-    </ul>
-</section>
-<section id="awards">
+    <section id="awards" class="tab-panel" data-tabgroup="main">
     <h2>Award</h2>
     <ul>
         <li>
-            <span class="item-title">Grand Prize, Minister's Award (Deputy Prime Minister and Minister of Science and ICT)</span>
-            <span class="item-desc">2025 My Chip Competition, 12-bit CORDIC-based NCO (Silicon Proved)</span>
+            <!-- 사진 추가: 아래 <span> 안에 이 줄을 붙여넣으세요. 여러 장 넣으면 사진첩이 됩니다.
+                 <img class="thumb" loading="lazy" src="images/파일명.jpg" alt="짧은 설명" data-caption="확대했을 때 뜰 설명"> -->
+            <span class="thumbs"></span>
+            <div class="item-body">
+                <div class="item-head">
+                    <span class="item-title">1st Place, sponsored by AMD</span>
+                    <span class="item-meta">Ghent, Belgium</span>
+                </div>
+                <div class="item-head">
+                    <span class="item-venue">Agentic FPGA Backend Optimization Competition at FPL&rsquo;26</span>
+                    <span class="item-meta">Sep. 2026</span>
+                </div>
+                <span class="item-note">Built an LLM-driven agentic system that analyzes FPGA design checkpoints (DCPs) to select and execute optimization strategies.</span>
+            </div>
         </li>
         <li>
-            <span class="item-title">Grand Prize, Dean's Award (College of Electronics and Information, Kyung Hee University)</span>
-            <span class="item-desc">Capstone Design, Alcohol-Sensing Ignition Interlock System</span>
+            <span class="thumbs">
+                <img class="thumb" loading="lazy" src="images/nco_wide.jpg" alt="12-bit CORDIC-based NCO System PCB"
+                     data-caption="12-bit CORDIC-based NCO System PCB (Silicon Proven)">
+            </span>
+            <div class="item-body">
+                <div class="item-head">
+                    <span class="item-title">Grand Prize, Korean Minister of Science and ICT &amp; Deputy Prime Minister</span>
+                    <span class="item-meta">Gwangju, Korea</span>
+                </div>
+                <div class="item-head">
+                    <span class="item-venue">My Chip Design Competition at IEIE&rsquo;25</span>
+                    <span class="item-meta">Nov. 2025</span>
+                </div>
+                <span class="item-note">12-bit CORDIC-based NCO.</span>
+            </div>
         </li>
         <li>
-            <span class="item-title">Commander's Commendation (6th Infantry Division Commander, Republic of Korea Army)</span>
-            <span class="item-desc">Basic military training, awarded to the top 5 recruits for outstanding performance.</span>
+            <!-- 사진 추가: 아래 <span> 안에 이 줄을 붙여넣으세요. 여러 장 넣으면 사진첩이 됩니다.
+                 <img class="thumb" loading="lazy" src="images/파일명.jpg" alt="짧은 설명" data-caption="확대했을 때 뜰 설명"> -->
+            <span class="thumbs"></span>
+            <div class="item-body">
+                <div class="item-head">
+                    <span class="item-title">Grand Prize, Dean of College of Electronics and Information Engineering</span>
+                    <span class="item-meta">Yongin, Korea</span>
+                </div>
+                <div class="item-head">
+                    <span class="item-venue">Capstone Design</span>
+                    <span class="item-meta">Jan. 2023</span>
+                </div>
+                <span class="item-note">Alcohol Sensing-Based Ignition Interlock System &mdash; an ignition locking mechanism that prevents vehicle startup by physical keyhole restriction.</span>
+            </div>
+        </li>
+        <li>
+            <!-- 사진 추가: 아래 <span> 안에 이 줄을 붙여넣으세요. 여러 장 넣으면 사진첩이 됩니다.
+                 <img class="thumb" loading="lazy" src="images/파일명.jpg" alt="짧은 설명" data-caption="확대했을 때 뜰 설명"> -->
+            <span class="thumbs"></span>
+            <div class="item-body">
+                <div class="item-head">
+                    <span class="item-title">Top 5 Recruits, ROK Army 6th Infantry Div. Commander&rsquo;s Commendation</span>
+                    <span class="item-meta">Cheorwon, Korea</span>
+                </div>
+                <div class="item-head">
+                    <span class="item-venue">6th Infantry Div. Recruit Training Center</span>
+                    <span class="item-meta">Sep. 2020</span>
+                </div>
+                <span class="item-note">Awarded for excellence in basic training.</span>
+            </div>
         </li>
     </ul>
 </section>
-<section id="activities">
-    <h2>Extracurricular Activities</h2>
+    <section id="publications" class="tab-panel" data-tabgroup="main">
+    <h2>Publications</h2>
     <ul>
         <li>
-            <div class="hover-container">
-                <span class="item-title chip-trigger">Chip Design Project #3: 12-bit CORDIC-based NCO (2025 1st Shuttle, My Chip Service)</span>
-                <div class="chip-tooltip">
-                    <div class="chip-top-wide">
-                        <img src="images/nco_wide.jpg" alt="NCO Full Layout">
-                        <span class="caption">12-bit CORDIC-based NCO System PCB</span>
-                    </div>
-                    <div class="chip-grid">
-                        <div><img src="images/layout1.png" alt="Layout 1"><span class="caption">Sub1: Phase Accumulator</span></div>
-                        <div><img src="images/layout2.png" alt="Layout 2"><span class="caption">Sub2: CORDIC Element</span></div>
-                        <div><img src="images/layout3.png" alt="Layout 3"><span class="caption">Sub3: Output Terminal</span></div>
-                    </div>
+            <!-- 사진 추가: 아래 <span> 안에 이 줄을 붙여넣으세요. 여러 장 넣으면 사진첩이 됩니다.
+                 <img class="thumb" loading="lazy" src="images/파일명.jpg" alt="짧은 설명" data-caption="확대했을 때 뜰 설명"> -->
+            <span class="thumbs"></span>
+            <div class="item-body">
+                <div class="item-head">
+                    <span class="item-title">12-bit CORDIC-based NCO, &ldquo;My Chip&rdquo; Design, Fabrication and Test</span>
+                    <span class="item-meta">IEIE 2025<br>(Domestic)</span>
                 </div>
+                <span class="item-desc">Designed and tested a 12-bit NCO using the ETRI 500nm process.</span>
             </div>
-            <span class="item-desc">Open-Source EDA-based design, taped out via the My Chip Service 500nm Si CMOS.</span>
         </li>
         <li>
-            <div class="hover-container">
-                <span class="item-title chip-trigger">Chip Design Project #2: 8-bit FIR Processing Element (2024 2nd Shuttle, My Chip Service)</span>
-                <div class="chip-tooltip single-chip">
-                    <img src="images/fir_layout.png" alt="FIR Layout">
-                    <span class="caption">FIR Processing Element</span>
+            <!-- 사진 추가: 아래 <span> 안에 이 줄을 붙여넣으세요. 여러 장 넣으면 사진첩이 됩니다.
+                 <img class="thumb" loading="lazy" src="images/파일명.jpg" alt="짧은 설명" data-caption="확대했을 때 뜰 설명"> -->
+            <span class="thumbs"></span>
+            <div class="item-body">
+                <div class="item-head">
+                    <span class="item-title">ETRI 0.5&#181;m Process-based 4-bit Booth&rsquo;s Multiplier Design and Chip Test</span>
+                    <span class="item-meta">IEIE 2024<br>(Domestic)</span>
                 </div>
+                <span class="item-desc"><em>Oral presentation.</em> Designed and tested a Booth multiplier using the ETRI 500nm process.</span>
             </div>
-            <span class="item-desc">Open-Source EDA-based design, taped out via the My Chip Service 500nm Si CMOS.</span>
-        </li>
-        <li>
-            <span class="item-title">Panelist: 2024 Presidential Town Hall Meeting</span>
-            <span class="item-desc">Selected as a student representative to provide feedback on the "My Chip Service".</span>
-        </li>
-        <li>
-            <span class="item-title">Presenter: 2024 IEIE Summer Conference</span>
-            <span class="item-desc">Presented "ETRI 0.5㎛ Process-based 4-bit Booth's Multiplier Design and Chip Test".</span>
-        </li>
-        <li>
-            <div class="hover-container">
-                <span class="item-title chip-trigger">Chip Design Project #1: 4-bit Booth's Multiplier (2023 1st Shuttle, My Chip Service)</span>
-                <div class="chip-tooltip single-chip">
-                    <img src="images/booth_layout.png" alt="Booth Layout">
-                    <span class="caption">Booth's Multiplier</span>
-                </div>
-            </div>
-            <span class="item-desc">Open-Source EDA-based design, taped out via the My Chip Service 500nm Si CMOS.</span>
         </li>
     </ul>
 </section>
-<section id="contact">
+    <section id="chips" class="tab-panel" data-tabgroup="main">
+    <h2>Chip Gallery</h2>
+    <!-- 카드를 추가하려면 <article class="gallery-card"> 블록을 통째로 복사하세요.
+         사진은 <span class="thumbs"> 안에 <img class="thumb"> 를 넣으면 됩니다 (여러 장 = 사진첩). -->
+    <div class="gallery">
+        <article class="gallery-card">
+            <span class="thumbs"></span>
+            <h3>Robotic Reflex Chip for the PiPer Robotic Arm</h3>
+            <p class="gallery-meta">TinyTapeout 180nm <span class="badge badge-wip">Fabrication in Progress</span></p>
+            <p class="gallery-desc">Developed using an FPGA-based hardware-in-the-loop simulation (HILS) setup integrated with Gazebo, then submitted for fabrication through TinyTapeout.</p>
+        </article>
+
+        <article class="gallery-card">
+            <span class="thumbs">
+                <img class="thumb" loading="lazy" src="images/nco_wide.jpg" alt="NCO System PCB"
+                     data-caption="12-bit CORDIC-based NCO System PCB">
+                <img class="thumb" loading="lazy" src="images/layout1.png" alt="Phase Accumulator layout"
+                     data-caption="Sub1: Phase Accumulator">
+                <img class="thumb" loading="lazy" src="images/layout2.png" alt="CORDIC Element layout"
+                     data-caption="Sub2: CORDIC Element">
+                <img class="thumb" loading="lazy" src="images/layout3.png" alt="Output Terminal layout"
+                     data-caption="Sub3: Output Terminal">
+            </span>
+            <h3>12-bit CORDIC-based NCO</h3>
+            <p class="gallery-meta">ETRI 500nm <span class="badge badge-done">Silicon Proven</span></p>
+            <p class="gallery-desc">A Numerically Controlled Oscillator using the CORDIC algorithm to generate sinusoidal waveforms, optimized under I/O pad and area limitations.</p>
+        </article>
+
+        <article class="gallery-card">
+            <span class="thumbs">
+                <img class="thumb" loading="lazy" src="images/fir_layout.png" alt="FIR Processing Element layout"
+                     data-caption="8-bit FIR Filter Processing Element">
+            </span>
+            <h3>8-bit FIR Filter Processing Element</h3>
+            <p class="gallery-meta">ETRI 500nm <span class="badge">Fabricated</span></p>
+            <p class="gallery-desc">A Processing Element (PE) for Finite Impulse Response (FIR) filtering applications, optimized under I/O pad and area limitations.</p>
+        </article>
+
+        <article class="gallery-card">
+            <span class="thumbs">
+                <img class="thumb" loading="lazy" src="images/booth_layout.png" alt="Booth's Multiplier layout"
+                     data-caption="4-bit Booth's Algorithm Multiplier">
+            </span>
+            <h3>4-bit Booth&rsquo;s Algorithm Multiplier</h3>
+            <p class="gallery-meta">ETRI 500nm <span class="badge">Fabricated</span></p>
+            <p class="gallery-desc">A hardware multiplier based on Booth&rsquo;s encoding to reduce partial products &mdash; the first chip to use a custom ETRI 500nm standard cell library.</p>
+        </article>
+    </div>
+</section>
+    <section id="contact" class="tab-panel" data-tabgroup="main">
     <h2>Contact</h2>
-    <ul>
-        <li>Email: <a href="mailto:eunhajosu@khu.ac.kr" class="contact-link">eunhajosu@khu.ac.kr</a></li>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/지하은-학생-전자정보대학-전자공학과-6093133a7" class="contact-link" target="_blank" rel="noopener">지하은-학생-전자정보대학-전자공학과</a></li>
-        <li>GitHub: <a href="https://github.com/haeun-josue" class="contact-link" target="_blank" rel="noopener">github.com/haeun-josue</a></li>
-        <li>Blog: <a href="https://dream-ee-master.tistory.com" class="contact-link" target="_blank" rel="noopener">dream-ee-master.tistory.com</a></li>
+    <!-- 항목을 추가하려면 <li> 를 하나 더 쓰면 됩니다.
+         아이콘 SVG 는 simple-icons (CC0) 에서 가져왔습니다. -->
+    <ul class="contact-list">
+        <li><svg class="ci" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><title>Gmail</title><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>Email: <a href="mailto:haeun.josue@gmail.com" class="contact-link">haeun.josue@gmail.com</a></li>
+        <li><svg class="ci" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn: <a href="https://www.linkedin.com/in/haeun-ji-590025439" class="contact-link" target="_blank" rel="noopener">linkedin.com/in/haeun-ji</a></li>
+        <li><svg class="ci" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub: <a href="https://github.com/haeun-josue" class="contact-link" target="_blank" rel="noopener">github.com/haeun-josue</a></li>
+        <li><svg class="ci" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><title>X</title><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>X: <a href="https://x.com/haeun_josue" class="contact-link" target="_blank" rel="noopener">x.com/haeun_josue</a></li>
+        <li><svg class="ci" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><title>Tistory</title><path d="M0 3a3 3 0 1 0 6 0 3 3 0 0 0-6 0m9 18a3 3 0 1 0 6 0 3 3 0 0 0-6 0m0-9a3 3 0 1 0 6 0 3 3 0 0 0-6 0m0-9a3 3 0 1 0 6 0 3 3 0 0 0-6 0m9 0a3 3 0 1 0 6 0 3 3 0 0 0-6 0"/></svg>Blog: <a href="https://dream-ee-master.tistory.com" class="contact-link" target="_blank" rel="noopener">dream-ee-master.tistory.com</a></li>
     </ul>
 </section>
 </div>
+<!-- 썸네일 클릭 확대(라이트박스) -->
+<script src="01_script.js"></script>
 </body>
 </html>

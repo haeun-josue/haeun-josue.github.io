@@ -8,16 +8,25 @@
     <title>Personal Page | Haeun Ji</title>
     <!-- 분리한 CSS 파일 로드 -->
     <link rel="stylesheet" href="00_style.css">
+    <!-- JS가 꺼져 있으면 모든 섹션이 그냥 펼쳐지도록 -->
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 <div class="container">
     {% include 01_header.html %}
     {% include 02_about.html %}
-    {% include 03_education.html %}
-    {% include 04_interests.html %}
+
+    <!-- 탭 버튼은 아래 섹션들의 <h2> 에서 자동 생성됩니다 (01_script.js) -->
+    <nav class="tabs" data-tabs="main" data-tabs-hash></nav>
+
+    {% include 03_news.html %}
+    {% include 04_experience.html %}
     {% include 05_awards.html %}
-    {% include 06_activities.html %}
-    {% include 07_contact.html %}
+    {% include 06_publications.html %}
+    {% include 07_chips.html %}
+    {% include 08_contact.html %}
 </div>
+<!-- 썸네일 클릭 확대(라이트박스) -->
+<script src="01_script.js"></script>
 </body>
 </html>

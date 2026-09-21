@@ -1,0 +1,49 @@
+<section id="chips" class="tab-panel" data-tabgroup="main">
+    <h2>Chip Gallery</h2>
+    <!-- 카드를 추가하려면 <article class="gallery-card"> 블록을 통째로 복사하세요.
+         사진은 <span class="thumbs"> 안에 <img class="thumb"> 를 넣으면 됩니다 (여러 장 = 사진첩). -->
+    <div class="gallery">
+        <article class="gallery-card">
+            <span class="thumbs"></span>
+            <h3>Robotic Reflex Chip for the PiPer Robotic Arm</h3>
+            <p class="gallery-meta">TinyTapeout 180nm <span class="badge badge-wip">Fabrication in Progress</span></p>
+            <p class="gallery-desc">Developed using an FPGA-based hardware-in-the-loop simulation (HILS) setup integrated with Gazebo, then submitted for fabrication through TinyTapeout.</p>
+        </article>
+
+        <article class="gallery-card">
+            <span class="thumbs">
+                <img class="thumb" loading="lazy" src="images/nco_wide.jpg" alt="NCO System PCB"
+                     data-caption="12-bit CORDIC-based NCO System PCB">
+                <img class="thumb" loading="lazy" src="images/layout1.png" alt="Phase Accumulator layout"
+                     data-caption="Sub1: Phase Accumulator">
+                <img class="thumb" loading="lazy" src="images/layout2.png" alt="CORDIC Element layout"
+                     data-caption="Sub2: CORDIC Element">
+                <img class="thumb" loading="lazy" src="images/layout3.png" alt="Output Terminal layout"
+                     data-caption="Sub3: Output Terminal">
+            </span>
+            <h3>12-bit CORDIC-based NCO</h3>
+            <p class="gallery-meta">ETRI 500nm <span class="badge badge-done">Silicon Proven</span></p>
+            <p class="gallery-desc">A Numerically Controlled Oscillator using the CORDIC algorithm to generate sinusoidal waveforms, optimized under I/O pad and area limitations.</p>
+        </article>
+
+        <article class="gallery-card">
+            <span class="thumbs">
+                <img class="thumb" loading="lazy" src="images/fir_layout.png" alt="FIR Processing Element layout"
+                     data-caption="8-bit FIR Filter Processing Element">
+            </span>
+            <h3>8-bit FIR Filter Processing Element</h3>
+            <p class="gallery-meta">ETRI 500nm <span class="badge">Fabricated</span></p>
+            <p class="gallery-desc">A Processing Element (PE) for Finite Impulse Response (FIR) filtering applications, optimized under I/O pad and area limitations.</p>
+        </article>
+
+        <article class="gallery-card">
+            <span class="thumbs">
+                <img class="thumb" loading="lazy" src="images/booth_layout.png" alt="Booth's Multiplier layout"
+                     data-caption="4-bit Booth's Algorithm Multiplier">
+            </span>
+            <h3>4-bit Booth&rsquo;s Algorithm Multiplier</h3>
+            <p class="gallery-meta">ETRI 500nm <span class="badge">Fabricated</span></p>
+            <p class="gallery-desc">A hardware multiplier based on Booth&rsquo;s encoding to reduce partial products &mdash; the first chip to use a custom ETRI 500nm standard cell library.</p>
+        </article>
+    </div>
+</section>

@@ -17,7 +17,7 @@ body {
 }
 
 .container {
-    max-width: 700px;
+    max-width: 820px;
     margin: 0 auto;
     padding: 40px 20px;
 }
@@ -65,6 +65,74 @@ h2 {
     box-sizing: border-box;
 }
 
+/* --- 탭 (About Me 는 항상 표시, 나머지는 한 번에 하나) --- */
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 35px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.tabs:empty { display: none; }   /* JS 없이 열었을 때 */
+
+.tab-btn {
+    font-family: inherit;
+    font-size: 0.88rem;
+    line-height: 1.4;
+    padding: 7px 15px;
+    color: var(--accent-blue);
+    background: #ffffff;
+    border: 1px solid #d5e0ea;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.tab-btn:hover { background: #eef3f8; }
+
+.tab-btn:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 2px;
+}
+
+.tab-btn[aria-selected="true"] {
+    color: #ffffff;
+    background: var(--accent-blue);
+    border-color: var(--accent-blue);
+    font-weight: bold;
+}
+
+/* 하위 탭 (Experience & Education 안쪽) */
+.tabs-sub {
+    gap: 6px;
+    margin-bottom: 26px;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.tabs-sub .tab-btn {
+    font-size: 0.82rem;
+    padding: 5px 13px;
+    color: #6b7b8a;
+    background: var(--light-gray);
+    border-color: #e6e6e6;
+    border-radius: 6px;
+}
+
+.tabs-sub .tab-btn:hover { background: #eef3f8; color: var(--accent-blue); }
+
+.tabs-sub .tab-btn[aria-selected="true"] {
+    color: #ffffff;
+    background: #5b7c99;
+    border-color: #5b7c99;
+}
+
+/* JS 가 살아 있을 때만 숨김 — 꺼져 있으면 전부 펼쳐져 보임 */
+.js .tab-panel { display: none; }
+.js .tab-panel.is-active { display: block; }
+
 /* --- About --- */
 .about-content {
     display: flex;
@@ -102,65 +170,225 @@ li::before {
 .item-title { font-weight: bold; display: block; }
 .item-desc  { font-size: 0.85rem; color: #666; display: block; }
 
-/* --- 이미지 호버 툴팁 --- */
-.hover-container {
-    position: relative;
-    display: inline-block;
+/* 수상 항목의 대회명 — 제목 바로 아래 기울임꼴 */
+.item-venue {
+    display: block;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #55616c;
 }
 
-.chip-trigger {
+/* 회사 이름 옆에 붙는 회사 종류 */
+.item-kind {
+    font-weight: normal;
+    font-size: 0.78rem;
+    color: #8a8a8a;
+}
+
+h3 {
+    font-size: 0.95rem;
     color: var(--accent-blue);
-    cursor: pointer;
-    border-bottom: 1px dashed var(--accent-blue);
-    transition: 0.2s;
-}
-.chip-trigger:hover { background-color: #f0f4f8; }
-
-.chip-tooltip {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    bottom: 130%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background: #fff;
-    border: 1px solid var(--accent-blue);
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    padding: 15px;
-    z-index: 100;
-    transition: all 0.3s ease;
-    width: 500px;
+    margin: 0 0 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #edf1f5;
 }
 
-.hover-container:hover .chip-tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
+ul + h3 { margin-top: 32px; }
+
+/* 제목 | 장소·날짜 를 좌우로 벌리는 줄 */
+.item-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 14px;
 }
 
-/* NCO: 상단 와이드 이미지 */
-.chip-top-wide { width: 100%; margin-bottom: 12px; }
-.chip-top-wide img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    border: 1px solid #eee;
+.item-meta {
+    flex: 0 0 auto;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: #8a8a8a;
+    text-align: right;
+    white-space: nowrap;
 }
 
-/* 하단 3개 그리드 */
-.chip-grid {
+.item-note {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: #777;
+}
+
+/* --- News --- */
+.news-list li {
+    display: flex;
+    gap: 16px;
+    align-items: baseline;
+    padding-left: 0;
+}
+
+.news-list li::before { content: none; }
+
+.news-date {
+    flex: 0 0 auto;
+    width: 62px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--accent-blue);
+    letter-spacing: 0.01em;
+}
+
+.news-text { flex: 1 1 auto; }
+
+/* --- Chip Gallery --- */
+.gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 26px 22px;
 }
-.chip-grid div { text-align: center; }
-.chip-grid img {
+
+.gallery-card { min-width: 0; }
+
+.gallery-card .thumbs { width: 100%; }
+
+.gallery-card h3 {
+    font-size: 0.92rem;
+    color: var(--text-color);
+    margin: 12px 0 6px;
+    padding-bottom: 0;
+    border-bottom: none;
+    line-height: 1.5;
+}
+
+.gallery-meta {
+    margin: 0 0 8px;
+    font-size: 0.76rem;
+    color: #8a8a8a;
+}
+
+.gallery-desc {
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: #777;
+}
+
+.badge {
+    display: inline-block;
+    margin-left: 4px;
+    padding: 2px 7px;
+    font-size: 0.68rem;
+    line-height: 1.5;
+    color: #5f6f7d;
+    background: var(--light-gray);
+    border: 1px solid #e4e4e4;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.badge-done {
+    color: #1d6b3f;
+    background: #eaf6ee;
+    border-color: #cfe8d8;
+}
+
+.badge-wip {
+    color: #8a6100;
+    background: #fdf5e4;
+    border-color: #f0e2bf;
+}
+
+/* --- 항목 썸네일 --------------------------------------------------
+   li 안에 <span class="thumbs"> ... </span> 한 줄만 넣으면
+   자동으로 [썸네일 | 텍스트] 2단으로 바뀝니다. 클래스 추가 불필요.
+
+   썸네일은 항상 "첫 번째 사진 한 장"만 4:3 상자 안에 잘림 없이 들어가고,
+   클릭하면 라이트박스가 열려 그 안에서 원본 비율로 넘겨 봅니다.
+------------------------------------------------------------------- */
+li.with-thumb,
+li:has(.thumbs) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.thumbs {
+    position: relative;
+    display: block;
+    flex: 0 0 auto;
+    width: 152px;           /* 4:3 → 152 x 114 */
+    line-height: 0;
+}
+
+/* 두 번째 사진부터는 숨김 — 갤러리 목록으로만 쓰임 */
+.thumbs .thumb ~ .thumb { display: none; }
+
+.item-body {
+    flex: 1 1 300px;
+    min-width: 0;
+}
+
+.thumb {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;    /* 잘리지 않고 상자 안에 전체가 들어감 */
+    display: block;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    background: var(--light-gray);
+    cursor: zoom-in;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.thumb:hover,
+.thumb:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(9, 72, 134, 0.22);
+    outline: none;
+    border-color: var(--accent-blue);
+}
+
+/* 사진이 아직 없는 항목 — 빈 <span class="thumbs"></span> 이면 자리틀 표시 */
+.thumbs:not(:has(.thumb))::before {
+    content: "No Image";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    box-sizing: border-box;
+    font-size: 11px;
+    line-height: 1.4;
+    letter-spacing: 0.03em;
+    color: #b8bec4;
+    background: var(--light-gray);
+    border: 1px dashed #dcdcdc;
+    border-radius: 5px;
+}
+
+/* 여백 없이 상자를 꽉 채우고 싶을 때 (가장자리가 잘립니다) */
+.thumb.crop {
     object-fit: cover;
-    border-radius: 4px;
-    border: 1px solid #eee;
+    padding: 0;
+    background: #fff;
+}
+
+/* 사진이 2장 이상이면 JS가 붙이는 장수 배지 */
+.thumbs-count {
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    padding: 3px 7px;
+    font-size: 10px;
+    line-height: 1.2;
+    color: #fff;
+    background: rgba(9, 72, 134, 0.88);
+    border-radius: 10px;
+    pointer-events: none;
 }
 
 .caption {
@@ -171,18 +399,122 @@ li::before {
     text-align: center;
 }
 
-/* 단일 이미지 툴팁 */
-.single-chip { width: 250px; }
-.single-chip img { width: 100%; border-radius: 4px; }
+/* --- 라이트박스 (썸네일 클릭 → 원본 비율 사진첩) --- */
+#lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 56px 76px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.9);
+    cursor: zoom-out;
+}
+
+#lightbox[hidden] { display: none; }
+
+/* 원본 비율 유지 — 잘리지 않고 화면 안에 맞춰짐 */
+#lightbox .lb-img {
+    max-width: 100%;
+    max-height: 76vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+    background: #fff;
+    cursor: default;
+}
+
+#lightbox .lb-caption {
+    margin: 0;
+    color: #f1f1f1;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 90vw;
+}
+
+#lightbox .lb-counter {
+    color: #9fb4c9;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}
+
+#lightbox .lb-close,
+#lightbox .lb-nav {
+    position: absolute;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.12);
+    border: none;
+    border-radius: 50%;
+    line-height: 1;
+    cursor: pointer;
+}
+
+#lightbox .lb-close:hover,
+#lightbox .lb-nav:hover { background: rgba(255, 255, 255, 0.3); }
+
+#lightbox .lb-close {
+    top: 16px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 26px;
+}
+
+#lightbox .lb-nav {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+}
+
+#lightbox .lb-prev { left: 16px; }
+#lightbox .lb-next { right: 16px; }
+#lightbox .lb-nav[hidden] { display: none; }
 
 /* --- Contact --- */
-.contact-link { color: var(--accent-blue); text-decoration: none; font-weight: bold; }
+/* 글머리 기호 대신 브랜드 아이콘을 씁니다.
+   아이콘은 글자 하나처럼 취급 — 1em 크기로 본문 베이스라인에 맞춰 흐릅니다. */
+.contact-list li { padding-left: 0; }
+.contact-list li::before { content: none; }
+
+.contact-list .ci {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 9px;
+    vertical-align: -0.125em;   /* 베이스라인 정렬 */
+    fill: currentColor;
+    color: var(--accent-blue);
+}
+
+.contact-link {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: bold;
+}
+
 .contact-link:hover { text-decoration: underline; }
 
 /* --- 모바일 --- */
 @media (max-width: 600px) {
     header h1 { font-size: 1.8rem; }
     .about-content { text-align: center; justify-content: center; }
-    .chip-tooltip { width: 280px; }
-    .chip-grid { grid-template-columns: 1fr; }
+    .thumbs { width: 132px; }
+    .tab-btn { font-size: 0.8rem; padding: 6px 12px; }
+    .tabs { gap: 6px; }
+    .item-head { flex-direction: column; gap: 2px; }
+    .item-meta { text-align: left; white-space: normal; }
+    .item-meta br { display: none; }
+    .gallery { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px 14px; }
+    #lightbox { padding: 52px 16px; }
+    #lightbox .lb-nav { width: 40px; height: 40px; font-size: 20px; }
+    #lightbox .lb-prev { left: 6px; }
+    #lightbox .lb-next { right: 6px; }
 }
