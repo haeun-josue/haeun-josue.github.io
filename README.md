@@ -5,16 +5,21 @@ haeun-josue.github.io/
 ├── index.html            ← 뼈대. {% include %} 로 조각을 불러옴 (맨 위 --- 두 줄 필수)
 ├── 00_style.css
 ├── 01_script.js          ← 썸네일 클릭 확대(라이트박스)
-├── _includes/            ← 조각 HTML은 반드시 이 폴더 안에!
-│   ├── 01_header.html
-│   ├── 02_about.html        ← 항상 표시 (소개)
-│   ├── 03_news.html         ← 탭 · News
-│   ├── 04_experience.html   ← 탭 · Experience & Education (하위 탭 2개)
-│   ├── 05_awards.html       ← 탭 · Award
-│   ├── 06_publications.html ← 탭 · Publications
-│   ├── 07_chips.html        ← 탭 · Chip Gallery
-│   └── 08_contact.html      ← 탭 · Contact (맨 오른쪽)
-├── images/               ← 사진은 전부 여기에
+├── _includes/            ← 챕터(섹션)마다 폴더 하나. 안에 조각 HTML + imgs/ 가 한 쌍
+│   ├── 01_header/
+│   │   ├── 01_header.html
+│   │   └── imgs/
+│   ├── 02_about/            ← 항상 표시 (소개)
+│   │   ├── 02_about.html
+│   │   └── imgs/            ←   02_about.html 에서 쓰는 사진은 여기
+│   ├── 03_news/             ← 탭 · News
+│   ├── 04_experience/       ← 탭 · Experience & Education (하위 탭 2개)
+│   ├── 05_awards/           ← 탭 · Award
+│   ├── 06_publications/     ← 탭 · Publications
+│   ├── 07_chips/            ← 탭 · Chip Gallery
+│   └── 08_contact/          ← 탭 · Contact (맨 오른쪽)
+│       (모두 같은 구조: <챕터>/<챕터>.html + <챕터>/imgs/)
+├── _config.yml           ← Jekyll 설정. _includes/ 안의 사진이 배포되게 하는 예외 지정 (지우지 말 것)
 ├── build_preview.sh      ← preview_local.html 을 다시 만드는 스크립트
 └── preview_local.html    ← 로컬 확인용 (자동 생성물. 직접 고치지 말 것)
 ```
@@ -39,7 +44,7 @@ Research Interests 는 별도 탭 없이 About Me 본문에 들어가 있습니�
 
 ## 하위 탭 (탭 안의 탭)
 
-`_includes/04_experience.html` 처럼 쓰면 됩니다. 그룹 이름(`expedu`)만 겹치지 않게 지으면
+`_includes/04_experience/04_experience.html` 처럼 쓰면 됩니다. 그룹 이름(`expedu`)만 겹치지 않게 지으면
 어느 섹션에서든 똑같이 만들 수 있습니다.
 
 ```html
@@ -64,15 +69,15 @@ Research Interests 는 별도 탭 없이 About Me 본문에 들어가 있습니�
 
 ## 섹션을 새로 추가할 때
 
-1. `_includes/08_새섹션.html` 을 만들고
+1. `_includes/09_새섹션/` 폴더를 만들고 그 안에 `09_새섹션.html` 과 `imgs/` 폴더를 만든다
    `<section id="new" class="tab-panel" data-tabgroup="main"> <h2>제목</h2> ... </section>`
-2. `index.html` 에 `{% include 08_새섹션.html %}` 한 줄 추가
+2. `index.html` 에 `{% include 09_새섹션/09_새섹션.html %}` 한 줄 추가
 
 탭 버튼은 저절로 생깁니다.
 
 ## News 항목 추가
 
-`_includes/03_news.html` 맨 위에 `<li>` 를 하나 더 쓰면 됩니다 (최신이 위).
+`_includes/03_news/03_news.html` 맨 위에 `<li>` 를 하나 더 쓰면 됩니다 (최신이 위).
 
 ```html
 <li>
@@ -83,12 +88,12 @@ Research Interests 는 별도 탭 없이 About Me 본문에 들어가 있습니�
 
 ## Chip Gallery 카드 추가
 
-`_includes/07_chips.html` 의 `<article class="gallery-card">` 블록을 통째로 복사하세요.
+`_includes/07_chips/07_chips.html` 의 `<article class="gallery-card">` 블록을 통째로 복사하세요.
 
 ```html
 <article class="gallery-card">
     <span class="thumbs">
-        <img class="thumb" loading="lazy" src="images/칩.png" alt="설명" data-caption="확대 시 설명">
+        <img class="thumb" loading="lazy" src="_includes/07_chips/imgs/칩.png" alt="설명" data-caption="확대 시 설명">
     </span>
     <h3>칩 이름</h3>
     <p class="gallery-meta">공정 <span class="badge badge-done">Silicon Proven</span></p>
@@ -101,7 +106,7 @@ Research Interests 는 별도 탭 없이 About Me 본문에 들어가 있습니�
 
 ## 연락처 수정
 
-`_includes/08_contact.html` 에 있습니다 (맨 오른쪽 탭). 줄 하나가 항목 하나입니다.
+`_includes/08_contact/08_contact.html` 에 있습니다 (맨 오른쪽 탭). 줄 하나가 항목 하나입니다.
 
 ```html
 <li>Email: <a href="mailto:주소" class="contact-link">표시할 글자</a></li>
@@ -120,7 +125,23 @@ Research Interests 는 별도 탭 없이 About Me 본문에 들어가 있습니�
 
 # 사진 추가하는 법
 
-## 1. 사진 파일을 `images/` 에 넣는다
+## 1. 사진 파일을 그 챕터의 `imgs/` 폴더에 넣는다
+
+사진은 조각 HTML 과 **같은 폴더 안의 `imgs/`** 에 둡니다. 예를 들어 Award 항목 사진이면
+`_includes/05_awards/imgs/` 에 넣고, `<img src="_includes/05_awards/imgs/파일명.jpg">` 처럼 씁니다.
+
+```
+_includes/05_awards/
+├── 05_awards.html      ← 여기서
+└── imgs/
+    └── 파일명.jpg      ← 이걸 씀
+```
+
+같은 사진을 두 챕터에서 쓸 때는 한 곳에만 두고 경로만 그쪽으로 적으면 됩니다
+(예: Award 의 NCO 사진은 `_includes/07_chips/imgs/nco_wide.jpg` 를 그대로 가리킴).
+
+> `_` 로 시작하는 폴더는 Jekyll 이 원래 배포하지 않습니다. `_config.yml` 의 `include: [_includes]` 가 이를 풀어 주는 설정이므로
+> 그 파일을 지우면 배포된 페이지에서 사진이 전부 깨집니다.
 
 ## 2. `<span class="thumbs">` 안에 `<img>` 한 줄을 붙여넣는다
 
@@ -135,7 +156,7 @@ Awards / Publications / Activities 의 모든 항목에는 이미 빈 자리틀�
 ```html
 <li>
     <span class="thumbs">
-        <img class="thumb" loading="lazy" src="images/내사진.jpg" alt="짧은 설명" data-caption="확대했을 때 밑에 뜰 설명">
+        <img class="thumb" loading="lazy" src="_includes/05_awards/imgs/내사진.jpg" alt="짧은 설명" data-caption="확대했을 때 밑에 뜰 설명">
     </span>
     <div class="item-body">
         <span class="item-title">제목</span>
@@ -155,9 +176,9 @@ Awards / Publications / Activities 의 모든 항목에는 이미 빈 자리틀�
 
 ```html
 <span class="thumbs">
-    <img class="thumb" loading="lazy" src="images/a.jpg" alt="A" data-caption="첫 번째">   <!-- ← 목록에 보이는 대표 사진 -->
-    <img class="thumb" loading="lazy" src="images/b.jpg" alt="B" data-caption="두 번째">
-    <img class="thumb" loading="lazy" src="images/c.jpg" alt="C" data-caption="세 번째">
+    <img class="thumb" loading="lazy" src="_includes/05_awards/imgs/a.jpg" alt="A" data-caption="첫 번째">   <!-- ← 목록에 보이는 대표 사진 -->
+    <img class="thumb" loading="lazy" src="_includes/05_awards/imgs/b.jpg" alt="B" data-caption="두 번째">
+    <img class="thumb" loading="lazy" src="_includes/05_awards/imgs/c.jpg" alt="C" data-caption="세 번째">
 </span>
 ```
 
@@ -174,7 +195,7 @@ Awards / Publications / Activities 의 모든 항목에는 이미 빈 자리틀�
 | --- | --- |
 | 여백 없이 상자를 꽉 채우고 싶을 때 | `class="thumb crop"` (대신 가장자리가 잘림) |
 | 사진 없는 항목의 프레임을 아예 숨기고 싶을 때 | 그 항목의 `<span class="thumbs"></span>` 줄을 지우면 됨 |
-| 썸네일은 가벼운 파일, 확대는 원본으로 | `data-full="images/원본.jpg"` 추가 |
+| 썸네일은 가벼운 파일, 확대는 원본으로 | `data-full="_includes/05_awards/imgs/원본.jpg"` 추가 |
 | 확대했을 때 설명 문구 | `data-caption="..."` (없으면 `alt` 값이 대신 쓰임) |
 
 **조작법** — 썸네일 클릭(또는 Tab 후 Enter)으로 열기, `←` `→` 또는 좌우 화살표 버튼으로 넘기기,
