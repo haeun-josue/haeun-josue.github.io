@@ -518,3 +518,13 @@ li:has(.thumbs) {
     #lightbox .lb-prev { left: 6px; }
     #lightbox .lb-next { right: 6px; }
 }
+
+/* 논문 저자 줄 — 본인 이름은 <strong> */
+.item-authors { display: block; margin-top: 2px; font-size: 0.85rem; color: #666; }
+.item-authors strong { color: var(--text-color); }
+/* 강조 문구 (예: Late-Breaking Results) */
+.item-highlight { font-style: normal; font-weight: bold; color: #c62828; }
+/* [Paper] [Video] 같은 링크 줄 */
+.item-links { display: block; font-size: 0.85rem; }
+/* Publications 아래 각주 */
+.pub-footnote { margin-top: 4px; font-size: 0.78rem; color: #8a8a8a; }
